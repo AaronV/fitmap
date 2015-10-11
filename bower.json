@@ -1,0 +1,25 @@
+{
+  "name": "fitmap",
+  "version": "0.0.1",
+  "authors": [
+    "Aaron <aaron.vanderpoel@gmail.com>"
+  ],
+  "description": "Workout Tracking Application",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "venter/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2",
+    "angular-route": "~1.2",
+    "angular-cookies": "~1.2",
+    "bootstrap": "~3.0.0",
+    "momentjs": "~2.5.1"
+  }
+}

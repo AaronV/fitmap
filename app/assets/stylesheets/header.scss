@@ -1,0 +1,18 @@
+header {
+  font-size: 24px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+  background-color: $color1;
+  color: white;
+
+  .header * {
+    color: white;
+    text-decoration: none;
+  }
+
+  .dropdown {
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

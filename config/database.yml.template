@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: fitmap_development
+  pool: 5
+  username: fitmap
+  password: fitmap

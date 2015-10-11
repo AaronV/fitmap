@@ -1,0 +1,15 @@
+<div class="workouts">
+  <h3>
+    Recent Workouts
+    &nbsp;&nbsp;&nbsp;
+    <button type="button" class="btn btn-primary btn-sm pull-right" ng-click="createWorkout()" ng-show="currentUser">Create</button>
+  </h3>
+  <ul class="list">
+    <li ng-repeat="workout in workouts | orderBy:'created_at':true" ng-click="go(workout)">
+      <span class="name">{{ workout.name }}</span>
+      <span class="coach">&nbsp;({{ workout.user.name }})</span>
+      &nbsp;
+      <small>{{ workout.createdAt }}&nbsp;&nbsp;&nbsp;{{ workout.description }}</small>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,28 @@
+<h3 ng-show="!workout.id">New</h3>
+<h3 ng-show="workout.id">Edit {{ workout.name }}</h3>
+
+<form novalidate>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input ng-model="workout.name" id="name" class="form-control" placeholder="name">
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea ng-model="workout.description" id="description" class="form-control" rows="12" placeholder="enter description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="participants">Participants <small>separated with commas</small></label>
+    <textarea ng-model="workout.participants" id="participants" class="form-control" rows="3" placeholder="participants"></textarea>
+  </div>
+
+  <button ng-if="!workout.id" ng-click="save()" type="submit" class="btn btn-primary">Create</button>
+  <button ng-if="workout.id" ng-click="save()" type="submit" class="btn btn-primary">Update</button>
+  <button ng-if="workout.id" ng-click="show()" class="btn btn-default">Cancel</button>
+  <label>
+    &nbsp;&nbsp;<input type="checkbox" ng-model="workout.notify_participants"> Notify participants
+  </label>
+
+</form>

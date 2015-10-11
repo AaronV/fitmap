@@ -1,0 +1,39 @@
+.comments {
+  margin-top: 25px;
+
+  .nav.nav-tabs {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+  // Comments
+  .comment_list {
+    .comment {
+      border-bottom: 1px solid #CCC;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+
+      em {
+        color: #999;
+      }
+
+      .controls {
+        span {
+          color: #999;
+          cursor: pointer;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 0 !important;
+      }
+    }
+  }
+}

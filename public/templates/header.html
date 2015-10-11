@@ -1,0 +1,96 @@
+<div ng-controller="HeaderCtrl">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-push-2">
+          <span class="header">
+            <a href="#">FitMap</a>
+          </span>
+
+          <div class="pull-right" ng-show="!currentUser">
+            <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#session_modal">Sign in</button>
+          </div>
+
+          <div class="pull-right" ng-show="currentUser">
+            <span class="dropdown dropdown-toggle" data-toggle="dropdown">
+              <span class="fa fa-user"></span>&nbsp;<span class="fa fa-caret-down"></span>
+            </span>
+            <ul class="dropdown-menu" role="menu">
+              <li class="dropdown-header">{{ currentUser.name }}</li>
+              <li class="divider"></li>
+              <li><a href="#" ng-click="logout()"><span class="fa fa-sign-out"></span> Sign out</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="session_modal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign in</h4>
+        </div>
+
+        <div class="modal-body">
+          <!-- Login Form -->
+          <form name="loginForm" role="form" ng-show="!showRegistraion">
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="email" ng-model="user.email" required autofocus>
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="password" placeholder="password" ng-model="user.password" required>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me" ng-model="user.rememberMe"> Remember me
+              </label>
+            </div>
+
+            <div class="alert alert-danger" ng-show="authReason">
+              {{authReason}}
+            </div>
+            <div class="alert alert-danger" ng-show="authError">
+              {{authError}}
+            </div>
+
+            <button class="btn btn-primary" type="submit" ng-click="login(user)" ng-disabled="loginForm.$invalid">Sign in</button>
+            <a class="btn btn-link" ng-click="showRegistraion = true">Register</a>
+          </form>
+
+          <!-- Registration Form -->
+          <form name="registrationForm" role="form" ng-show="showRegistraion">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="name" ng-model="user.name" required>
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="email" ng-model="user.email" required>
+            </div>
+
+            <div class="form-group">
+              <input class="form-control" type="password" placeholder="password" ng-model="user.password" required>
+            </div>
+
+            <div class="alert alert-danger" ng-show="authReason">
+              {{authReason}}
+            </div>
+            <div class="alert alert-danger" ng-show="authError">
+              {{authError}}
+            </div>
+
+            <button class="btn btn-primary" type="submit" ng-click="register(user)" ng-disabled="registrationForm.$invalid">Register</button>
+            <a class="btn btn-link" ng-click="showRegistraion = false">Cancel</a>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

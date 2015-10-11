@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= link_to(@workout.name, @url) %></h1>
+    <p>
+      Posted by <%= @workout.user.name %>, <%= @workout.created_at.strftime("%b %d, %Y") %>
+    </p>
+    <p>
+      <%=raw @description %>
+    </p>
+  </body>
+</html>
